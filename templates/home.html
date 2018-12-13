@@ -6,7 +6,13 @@
             <input type="text" name="url-input">
             <input type="submit">
         </form>
-
-        {{results}}
+    <img src={{image}} height="200" width="200">
+    {% if num != 200 %}
+    <p>{{results}}</p>
+    {% else %}
+    {% for thing in results %}
+      <li>{{thing['name']}} is {{thing['value']}}% in the image</li>
+    {% endfor %}
+    {% endif %}
     </body>
 </html>
